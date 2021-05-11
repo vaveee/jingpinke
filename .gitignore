@@ -43,3 +43,5 @@ wsgi.log
 data/
 _build/
 .env
+yes
+yes.pub
