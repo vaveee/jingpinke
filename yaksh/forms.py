@@ -630,7 +630,8 @@ class TestcaseForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ["title", "description", "image", "anonymous"]
+        # fields = ["title", "description", "image", "anonymous"]
+        fields = ["title", "description", "image"]
         widgets = {
             'title': forms.TextInput(
                 attrs={
@@ -653,7 +654,8 @@ class PostForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ["description", "image", "anonymous"]
+        # fields = ["description", "image", "anonymous"]
+        fields = ["description", "image"]
         widgets = {
             'description': forms.Textarea(
                 attrs={
