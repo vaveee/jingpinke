@@ -187,7 +187,8 @@ def quizlist_user(request, enrolled=None, msg=None):
         course_code = request.POST.get('course_code')
         hidden_courses = Course.objects.get_hidden_courses(code=course_code)
         courses = hidden_courses
-        title = 'Search Results'
+        title = '搜索课程'
+        # title = 'Search Results'
     else:
         enrolled_courses = user.students.filter(is_trial=False).order_by('-id')
         remaining_courses = list(Course.objects.filter(
@@ -197,7 +198,8 @@ def quizlist_user(request, enrolled=None, msg=None):
             ).order_by('-id'))
         courses = list(enrolled_courses)
         courses.extend(remaining_courses)
-        title = 'All Courses'
+        title = '所有课程'
+        # title = 'All Courses'
 
     for course in courses:
         if course.students.filter(id=user.id).exists():

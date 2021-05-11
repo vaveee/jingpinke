@@ -1,7 +1,8 @@
 {% extends "base.html" %}
+{% load tz %}
 
 {% block title %} {{questionpaper.quiz.description}} {% endblock %}
-{% block pagetitle %} Quiz Instructions and Rules {% endblock pagetitle %}
+{% block pagetitle %} 测验说明和规则 {% endblock pagetitle %}
 
 {% block content %}
 <div class="container">
@@ -12,14 +13,14 @@
     <div class="card-body">
       {% if questionpaper.quiz.is_expired %}
           <div class="alert alert-error">
-              This Quiz has expired. You can no longer attempt this Quiz.
+            此测验已过期。 您不能再尝试此测验。
           </div>
       {% else %}
           <div class="alert alert-info">
-              You can attempt this Quiz at any time between <b>{{ questionpaper.quiz.start_date_time }}</b> and <b>{{ questionpaper.quiz.end_date_time }}</b>
+            您可以在 <b>{{ questionpaper.quiz.start_date_time|date:'Y-m-d H:i:s'}}</b> 和 <b>{{ questionpaper.quiz.end_date_time|date:'Y-m-d H:i:s' }}</b>之间的任何时间尝试此测验
           </div>
       {% endif %}
-      <p> Welcome <strong>{{user.get_full_name|title}}</strong>, to the programming quiz! </p>
+      <p> 欢迎 <strong>{{user.get_full_name|title}}</strong>, 来参加这次测试! </p>
       {{ questionpaper.quiz.instructions|safe }}
       <div class="row">
         <div class="col-md-6">
@@ -27,12 +28,12 @@
             {% if status != "moderator" %}
               <a href="{% url 'yaksh:view_module' module.id course.id %}" class="btn btn-primary btn-lg" name="home">
                 <i class="fa fa-step-backward"></i>
-                Go Back
+                返回
               </a>
             {% else %}
               <a href="{% url 'yaksh:index' %}" class="btn btn-primary btn-lg" name="home">
                 <i class="fa fa-step-backward"></i>
-                Go Back
+                返回
               </a>
             {% endif %}
           </center>
@@ -42,7 +43,7 @@
               <form action="{% url 'yaksh:start_quiz' attempt_num module.id questionpaper.id course.id %}" method="post" align="center">
                {% csrf_token %}
                 <button class="btn btn-success btn-lg" type="submit" name="start">
-                  Start <i class="fa fa-play"></i>
+                  开始 <i class="fa fa-play"></i>
                 </button>
               </form>
           {% endif %}

@@ -185,13 +185,13 @@ class UserLoginForm(forms.Form):
     username = forms.CharField(
         max_length=30,
         widget=forms.TextInput(
-            attrs={'class': form_input_class, 'placeholder': 'Username'}
+            attrs={'class': form_input_class, 'placeholder': '用户名'}
         )
     )
     password = forms.CharField(
         max_length=30,
         widget=forms.PasswordInput(
-            attrs={'class': form_input_class, 'placeholder': 'Password'}
+            attrs={'class': form_input_class, 'placeholder': '密码'}
         )
     )
 
@@ -203,10 +203,10 @@ class UserLoginForm(forms.Form):
             user = authenticate(username=u_name, password=pwd)
         except Exception:
             raise forms.ValidationError(
-                "Username and/or Password is not entered"
+                "请填写用户名和密码"
             )
         if not user:
-            raise forms.ValidationError("Invalid username/password")
+            raise forms.ValidationError("用户名或密码不正确")
         return user
 
 

@@ -27,10 +27,10 @@
             <tr>
             {% if question in paper.questions_answered.all %}
                 <td> {{ question.summary }} </td>
-                <td> <span class="badge badge-success">Attempted</span> </td>
+                <td> <span class="badge badge-success">尝试过</span> </td>
             {% else %}
                 <td> {{ question }} </td>
-                <td> <span class="badge badge-warning">Not Attempted</span> </td>
+                <td> <span class="badge badge-warning">没有尝试</span> </td>
             {% endif %}
             </tr>
         {% endfor %}

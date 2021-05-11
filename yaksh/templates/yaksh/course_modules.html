@@ -27,7 +27,7 @@
             <div class="progress-wrapper">
                 <div class="progress-info">
                     <div class="progress-label">
-                      <span>Course completed</span>
+                      <span>课程完成</span>
                     </div>
                     <div class="progress-percentage">
                       <span>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="col-md-3">
                         <a class="card-link btn btn-outline-info" data-toggle="collapse" href="#collapse-{{module.id}}">
-                            Details&nbsp;<i class="fa fa-toggle-down"></i>
+                            详情&nbsp;<i class="fa fa-toggle-down"></i>
                         </a>
                     </div>
                     <div class="col-md-2">
@@ -79,15 +79,15 @@
                         {% get_module_status user module course as module_status %}
                         {% if module_status == "completed" %}
                         <div class="btn btn-info ">
-                            View
+                            查看
                         </div>
                         {% elif module_status == "inprogress" %}
                         <div class="btn btn-primary">
-                            Continue
+                            继续
                         </div>
                         {% else %}
                         <div class="btn btn-success ">
-                            Start
+                            开始
                         </div>
                         {% endif %}
                         </a>
@@ -96,7 +96,7 @@
                         <div class="progress-wrapper">
                         <div class="progress-info">
                             <div class="progress-label">
-                              <span>Module completed</span>
+                              <span>模块完成</span>
                             </div>
                             <div class="progress-percentage">
                               <span>
@@ -146,12 +146,12 @@
                             <td>
                                 {% if unit.type == "lesson" %}
                                     <a href="{% url 'yaksh:show_lesson' unit.lesson.id module.id course.id %}" class="btn btn-outline-info">
-                                        View
+                                        查看
                                     </a>
                                 {% else %}
                                     {% if unit.quiz.questionpaper_set.get %}
                                         <a href="{% url 'yaksh:start_quiz' unit.quiz.questionpaper_set.get.id module.id course.id %}" class="btn btn-outline-info">
-                                            View
+                                            查看
                                         </a>
                                     {% endif %}
                                 {% endif %}
