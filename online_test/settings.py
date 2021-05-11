@@ -99,9 +99,12 @@ DATABASES = {
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
-LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+
+
+LANGUAGE_CODE = "zh-hans"
+
+TIME_ZONE = 'Asia/Chongqing'
 
 USE_I18N = True
 
@@ -275,4 +278,3 @@ if USE_AWS:
     # Media Public
     AWS_PUBLIC_MEDIA_LOCATION = 'media/public'
     DEFAULT_FILE_STORAGE = 'yaksh.storage_backends.PublicMediaStorage'
-
