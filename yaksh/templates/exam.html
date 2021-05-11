@@ -45,7 +45,7 @@
         {{ paper.question_paper.quiz.description }}</h4>
       </center>
       <hr>
-      <center><p><b><u>Question Navigator</b></u></p></center>
+      <center><p><b><u>问题导航</b></u></p></center>
       <br>
       <div class="justify-content-center">
         {% for qid in paper.get_all_ordered_questions %}
@@ -79,20 +79,20 @@
         {% endfor %}
       </div>
       <br>
-      <p><span class="btn btn-success"></span> Attempted question(s)</p>
-      <p><span class="btn btn-primary"></span> Current question</p>
-      <p><span class="btn btn-outline-primary"></span> Unattempted question(s)</p>
+      <p><span class="btn btn-success"></span> 已作答题目</p>
+      <p><span class="btn btn-primary"></span> 当前题目</p>
+      <p><span class="btn btn-outline-primary"></span> 未作答题目</p>
       <br>
       <div>
-        <p class="text-center">Question(s) left: <b>{{ paper.questions_left }}</b></p>
+        <p class="text-center">剩余答题数: <b>{{ paper.questions_left }}</b></p>
       </div>
       <br>
       <div>
           <table class="table table-dark table-responsive-sm">
             <thead class="thead-dark">
               <tr>
-                <th>Category</th>
-                <th>Question No.</th>
+                <th>分类</th>
+                <th>题目数.</th>
               </tr>
             </thead>
             <tbody class="list">

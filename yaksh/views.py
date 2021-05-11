@@ -897,7 +897,7 @@ def check(request, q_id, attempt_num=None, questionpaper_id=None,
         else:
             user_answer = request.POST.get('answer')
         if not is_valid_answer(user_answer):
-            msg = "Please submit a valid answer."
+            msg = "请提交有效答案."
             return show_question(
                 request, current_question, paper, notification=msg,
                 course_id=course_id, module_id=module_id,
@@ -4004,7 +4004,7 @@ def submit_marker_quiz(request, course_id, toc_id):
             msg = "You have already submitted the answer"
     else:
         success = False
-        msg = "Please submit a valid answer"
+        msg = "请提交有效答案"
     context = {"success": success, "message": msg}
     return JsonResponse(context)
 
