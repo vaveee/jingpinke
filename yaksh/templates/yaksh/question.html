@@ -230,7 +230,7 @@ question_type = "{{ question.type }}";
                 {{ test_case.options }} <br/>
               {% else %}
               <input name="answer" type="radio" value="{{ test_case.id }}" />
-                {{ test_case.options|safe }} <br/>
+                {{ test_case.options }} <br/>
                 <!--test_case.options|safe remove safe-->
               {% endif %}
             {% endfor %}
