@@ -714,9 +714,9 @@ def show_question(request, question, paper, error_message=None,
         quiz_type = 'Exercise'
     if paper.questions_answered.filter(id=question.id).exists():
         notification = (
-            'You have already attempted this question successfully'
+            '您已经成功尝试了此问题'
             if question.type == "code" else
-            'You have already attempted this question'
+            '您已经尝试过此问题'
         )
     if question.type in ['mcc', 'mcq', 'arrange']:
         test_cases = question.get_ordered_test_cases(paper)
