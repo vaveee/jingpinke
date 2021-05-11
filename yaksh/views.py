@@ -698,14 +698,14 @@ def show_question(request, question, paper, error_message=None,
             course_id=course_id, module_id=module_id
         )
     if not quiz.active and not paper.is_special:
-        reason = 'The quiz has been deactivated!'
+        reason = '测验已被停用!'
         return complete(
             request, reason, paper.attempt_number, paper.question_paper.id,
             course_id=course_id, module_id=module_id
         )
     if not quiz.is_exercise:
         if paper.time_left() <= 0:
-            reason = 'Your time is up!'
+            reason = '测试时间到'
             return complete(
                 request, reason, paper.attempt_number, paper.question_paper.id,
                 course_id, module_id=module_id
@@ -822,7 +822,7 @@ def check(request, q_id, attempt_num=None, questionpaper_id=None,
     if request.method == 'POST':
         # Add the answer submitted, regardless of it being correct or not.
         if (paper.time_left() <= -10 or paper.status == "completed"):
-            reason = 'Your time is up!'
+            reason = '测试时间到'
             return complete(
                 request, reason, paper.attempt_number, paper.question_paper.id,
                 course_id, module_id=module_id

@@ -16,7 +16,7 @@
 {% if module_id and not paper.course.is_trial %}
 <center>
     <div class="alert alert-info col-md-8">
-        Note:- Please Click on the Next button to submit the quiz. Please do not close the browser without clicking Next.
+        注意：-请单击“下一步”按钮提交测验。 请不要在未单击“下一步”的情况下关闭浏览器。.
     </div>
 </center>
 {% endif %}
@@ -59,18 +59,18 @@
 <br>
 {% if module_id and not paper.course.is_trial %}
     {% if first_unit %}
-        <a href="{% url 'yaksh:next_unit' course_id module_id learning_unit.id '1' %}" class="btn btn-info btn-lg" id="Next"> Next
+        <a href="{% url 'yaksh:next_unit' course_id module_id learning_unit.id '1' %}" class="btn btn-info btn-lg" id="Next"> 下一步
             <span class="fa fa-step-forward">
             </span>
         </a>
     {% else %}
-        <a href="{% url 'yaksh:next_unit' course_id module_id learning_unit.id %}" class="btn btn-info btn-lg" id="Next"> Next
+        <a href="{% url 'yaksh:next_unit' course_id module_id learning_unit.id %}" class="btn btn-info btn-lg" id="Next"> 下一步
             <span class="fa fa-step-forward">
             </span>
         </a>
     {% endif %}
 {% else %}
-    <a href="{% url 'yaksh:index' %}" id="home" class="btn btn-primary btn-lg"> Home </a>
+    <a href="{% url 'yaksh:index' %}" id="home" class="btn btn-primary btn-lg"> 首页 </a>
 {% endif %}
 </center>
 <br><br>
