@@ -230,13 +230,13 @@
             </div>
             <br>
             <a href="{% url 'yaksh:next_unit' course.id learning_module.id current_unit.id %}" class="btn btn-info btn-lg" id="next_unit">
-                    Next&nbsp;<i class="fa fa-step-forward"></i>
+                    继续&nbsp;<i class="fa fa-step-forward"></i>
             </a>
         {% endif %}
         {% if state == 'lesson' %}
             <div class="col-md-8">
                 <hr>
-                <b><u>Comments:</u></b>
+                <b><u>留言:</u></b>
                 <form action="" method="POST" enctype='multipart/form-data'>
                     <div class="form-group">
                         {% csrf_token %}
@@ -257,7 +257,7 @@
                                     {% if comment.anonymous %}
                                         Anonymous
                                     {% else %}
-                                        {{comment.creator.username}}
+                                        {{comment.creator.firstname}}{{comment.creator.username}}
                                     {% endif %}
                                 </strong>
                             </div>
