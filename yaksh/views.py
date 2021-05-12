@@ -1058,7 +1058,7 @@ def complete(request, reason=None, attempt_num=None, questionpaper_id=None,
 
         paper.update_marks()
         paper.set_end_time(timezone.now())
-        message = reason or "Quiz has been submitted"
+        message = reason or "测验已提交"
         context = {'message': message, 'paper': paper,
                    'module_id': learning_module.id,
                    'course_id': course_id, 'learning_unit': learning_unit}
