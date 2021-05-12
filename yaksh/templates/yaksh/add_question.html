@@ -148,7 +148,7 @@
                     </div>
                   </div>
                 </div>
-                <div id="collapse{{form.instance.id}}" class="collapse {% if formset.extra == 1 %} show {% else %} hide {% endif %}" data-parent="#accordion">
+                <div id="collapse{{form.instance.id}}" class="collapse show" data-parent="#accordion">
                   <div class="card-body">
                     {% autoescape off %}
                       {{form.as_p}}
@@ -165,7 +165,7 @@
     <br>
     <center>
       <button class="btn btn-lg btn-success" type="submit" name="save_question">
-        <i class="fa fa-save"></i>&nbsp;Save
+        <i class="fa fa-save"></i>&nbsp;保存
       </button>
     </center>
   </form>
